@@ -1,6 +1,5 @@
 const express = require('express');
 const db = require('../models');
-const isAuthenticated = require('../lib/authenticate');
 const User = db.User;
 const Card = db.Card;
 const Status = db.Status;
