@@ -1,0 +1,15 @@
+{
+  "development": {
+    "username": "AirRicky",
+    "database": "Kanban",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "username": "AirRicky",
+    "database": "Kanban",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
