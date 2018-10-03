@@ -32,6 +32,10 @@
   ],
   "description": "Built with - React - Node - PostgreSQL - Express",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cozpon/Kanban.git"
+  },
   "devDependencies": {},
   "author": "",
   "license": "ISC"
