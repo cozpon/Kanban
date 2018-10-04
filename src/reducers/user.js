@@ -10,7 +10,7 @@ import { LOGIN_USER,
 const initialState = [];
 
 const User = (state = initialState, action) => {
-  switch (action.type){
+  switch (action.type) {
 
     case LOGIN_USER:
       console.log(action, "ACTION");
@@ -29,7 +29,6 @@ const User = (state = initialState, action) => {
         console.log(action, "FAILURE");
         newState = initialState;
       }
-
       return Object.assign({}, state, newState);
 
     case REGISTER_USER:

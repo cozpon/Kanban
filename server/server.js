@@ -7,6 +7,7 @@ const passport = require('passport');
 const path = require('path');
 const session = require('express-session');
 const redis = require('connect-redis')(session);
+const authenticatePassport = require('./lib/passport');
 
 const db = require('./models');
 const routes = require('./routes');

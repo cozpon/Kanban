@@ -23,6 +23,7 @@ export const ERROR = 'ERROR';
 
 
 export const registerUser = (registerCreds) => {
+  console.log(registerCreds);
   return (dispatch) => {
     return Axios.post(register, registerCreds)
     .then(response => {
@@ -41,6 +42,7 @@ export const registerUser = (registerCreds) => {
 };
 
 export const loginUser = (userCreds) => {
+  console.log(userCreds);
   return (dispatch) => {
     return Axios.post(login, userCreds)
     .then((response) => {

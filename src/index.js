@@ -9,6 +9,7 @@ import './index.css';
 
 import App from './containers/App';
 import Login from './containers/LogIN';
+import Register from './containers/Register';
 
 
 //---------SERVICEWORKERS-------------------
@@ -27,6 +28,8 @@ ReactDOM.hydrate(
     <Router>
       <div id="source">
         <Route exact path="/" component={App} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </div>
     </Router>
   </Provider>,

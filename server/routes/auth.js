@@ -23,7 +23,8 @@ const router = express.Router();
 
 //LogIN an authenticated user
 router.post('/login',
-  passport.authenticate('local'), (req, res) => {
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  (req, res) => {
     console.log(res.user);
   return res.json({
     id : req.user.id,
@@ -44,6 +45,7 @@ router.get('/logout', (req, res) => {
 
 //REGISTER a user
 router.post('/register', (req, res) => {
+  console.log(req.body);
   const { email, username } = req.body;
   return User.findOne({  // need to check if user already exists first
     where : { $or : [ { username : username }, { email : username } ] }, // lets client login with username or email
@@ -58,9 +60,9 @@ router.post('/register', (req, res) => {
       bcrypt.genSalt(saltRounds, (err, salt) => {
         bcrypt.hash(req.body.password, salt, (err, hash) => { // hash the password
           User.create({
-            email: email,
             username: username,
-            password: hash // store ONLY hashed password in database
+            password: hash,
+            email: email
           })
           .then((user) => {
             console.log('new user registered');
